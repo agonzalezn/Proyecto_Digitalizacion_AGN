@@ -87,5 +87,5 @@ Si eres desarrollador o profesor, así está estructurado el código:
 
 ---
 
-## Licencia
+## 🪪 Licencia
 Este proyecto se publica bajo la licencia **MIT** (Open Source).
