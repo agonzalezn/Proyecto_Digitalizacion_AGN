@@ -1,91 +1,100 @@
-# 🏐 VoleyPro
+# 🏐 VoleyPro - Digital Scoreboard & Tactical Assistant
 
-VoleyPro es una aplicación web para llevar el marcador y la táctica de tus partidos de voleibol directamente desde tu móvil u ordenador.
+VoleyPro is a web application designed to track the score and manage the tactics of your volleyball matches directly from your mobile device or computer.
 
-* No requiere instalación
-* No necesita conexión a internet para usar el marcador
-* Todos los datos de los partidos se guardan localmente en tu dispositivo
+* No installation required
+* No internet connection needed to use the scoreboard
+* All match data is stored locally on your device
 
 ---
 
-## 📥 Cómo usar la aplicación
+## 🎯 Motivation
 
-A diferencia de otras aplicaciones, no necesitas descargar ningún archivo `.exe`. VoleyPro funciona directamente en tu navegador web.
+The digital transformation of amateur sports is lagging. Referees and coaches still rely on paper and pencil, leading to data loss and calculation errors. VoleyPro was created to solve this by providing a frictionless, offline-first digital tool that works on any device without complex setups.
 
-### 🔹 Paso 1 – Descargar el código
+---
 
-1. Entra en este repositorio.
-2. Pulsa en el botón verde **`<> Code`** arriba a la derecha.
-3. Selecciona **Download ZIP**.
-4. Extrae (descomprime) la carpeta en tu Escritorio o donde prefieras.
+## 📥 How to deploy and use the app
+
+Unlike other applications, you don't need to download any `.exe` file. VoleyPro runs directly in your web browser.
+
+### 🔹 Step 1 – Download the code
+
+1. Go to this repository.
+2. Click on the green **`<> Code`** button in the top right corner.
+3. Select **Download ZIP**.
+4. Extract (unzip) the folder to your Desktop or preferred location.
 
 ![WhatsApp Image 2026-03-03 at 12 55 05](https://github.com/user-attachments/assets/a0b0e212-8016-435d-b701-45e47e20420c)
 
+### 🔹 Step 2 – Run the App
 
-### 🔹 Paso 2 – Ejecutar la App
+1. Open the folder you just extracted.
+2. Double-click the `index.html` file.
+3. You're done! It will automatically open in your default browser (Chrome, Safari, Edge...) and is ready to use.
 
-1. Entra en la carpeta que acabas de descomprimir.
-2. Haz doble clic en el archivo `index.html`.
-3. ¡Listo! Se abrirá automáticamente en tu navegador por defecto (Chrome, Safari, Edge...) y ya puedes empezar a usarla.
-
----
-
-## ⚠️ MUY IMPORTANTE – El guardado de datos
-
-Antes de empezar a guardar partidos, debes saber cómo funciona la memoria de la aplicación:
-
-VoleyPro **no usa servidores en la nube**. Utiliza una tecnología de tu navegador llamada `LocalStorage` para guardar el historial de partidos y los nombres de los equipos. 
-
-**¿Por qué es importante saber esto?**
-* Tus datos son **100% privados**, nadie más puede verlos.
-* Si juegas un partido, cierras la pestaña por error y vuelves a abrirla, **el marcador seguirá ahí**.
-* 🚨 **Cuidado:** Si borras los datos de navegación, las cookies o la caché de tu navegador de forma completa, **borrarás tu historial de partidos**.
+### 🌐 Live Demo
+If you don't want to download the code, you can try a fully functional live version of the app here:
+**[👉 Launch VoleyPro Live](https://tu-usuario.github.io/Proyecto2_Digitalizacion_AGN/)** *(Acuérdate de cambiar este enlace por el tuyo de GitHub Pages)*
 
 ---
 
-## 🚀 Cómo usar VoleyPro
+## ⚠️ VERY IMPORTANT – Data Storage
 
-### 1️⃣ El Marcador (En vivo)
-* Toca encima de "LOCAL" o "VISITA" para poner los nombres reales de los equipos.
-* Usa el botón gigante **`+`** para ir sumando puntos.
-* Si te equivocas, usa el botón **`-1`**.
-* Cuando un equipo llegue a 25 puntos (o 15 en el tie-break), pulsa **`SET 🏆`**.
-* Al terminar el encuentro, pulsa en **`🔄 Finalizar Partido y Guardar Acta`**.
+Before you start saving matches, you should know how the app's memory works:
 
-### 2️⃣ Historial y Estadísticas
-En el menú inferior, pulsa el icono del pergamino (📜):
-* Verás un resumen visual de tus victorias y tu porcentaje de éxito (Win Rate).
-* Tendrás la lista completa de todos los partidos que has guardado.
-* Puedes vaciar la lista entera usando el botón de borrar.
+VoleyPro **does not use cloud servers**. It uses a browser technology called `LocalStorage` to save your match history and team names. 
 
-### 3️⃣ Táctica y Entrenamientos
-En los iconos de posición (📍) y brazo (💪):
-* Consulta las 6 zonas de rotación.
-* Repasa qué hace exactamente cada jugador (Líbero, Colocador, Central, Opuesto).
-* Accede a una masterclass en vídeo para mejorar tu técnica de salto, recepción y saque.
+**Why is this important to know?**
+* Your data is **100% private**, no one else can see it.
+* If you are tracking a match, accidentally close the tab, and reopen it, **the score will still be there**.
+* 🚨 **Warning:** If you completely clear your browsing data, cookies, or browser cache, **you will delete your match history**.
 
 ---
 
-## 💻 Requisitos
+## 🚀 Usage Examples
 
-* Funciona en Windows, macOS, Linux, Android e iOS.
-* Solo necesitas un navegador web moderno (se recomienda Chrome, Firefox o Safari).
-* No necesitas instalar bases de datos, ni librerías adicionales.
+### 1️⃣ The Scoreboard (Live)
+* Tap on "LOCAL" or "VISITA" to set the real team names.
+* Use the giant **`+`** button to add points.
+* If you make a mistake, use the **`-1`** button.
+* When a team reaches 25 points (or 15 in a tie-break), tap **`SET 🏆`**.
+* When the match ends, click **`🔄 Finalizar Partido y Guardar Acta`** (End Match and Save Record).
+
+### 2️⃣ History & Statistics
+In the bottom menu, tap the scroll icon (📜):
+* See a visual summary of your victories and your Win Rate.
+* Access the full list of all saved matches.
+* You can clear the entire list using the delete button.
+
+### 3️⃣ Tactics & Training
+On the position (📍) and arm (💪) icons:
+* Review the 6 rotation zones.
+* Check exactly what each player does (Libero, Setter, Middle Blocker, Opposite).
+* Access a video masterclass to improve your jumping, passing, and serving technique.
 
 ---
 
-## 📁 Estructura del proyecto
+## 💻 Requirements
 
-Si eres desarrollador o profesor, así está estructurado el código:
-
-* `index.html` → El panel principal y marcador.
-* `historial.html` → Lógica de la tabla de registros.
-* `posiciones.html` → Explicación visual de táctica y zonas.
-* `entrenamientos.html` → Biblioteca multimedia.
-* `style.css` → Diseño moderno tipo *Glassmorphism*.
-* `script.js` → Lógica matemática del marcador y guardado en `LocalStorage`.
+* Works on Windows, macOS, Linux, Android, and iOS.
+* You only need a modern web browser (Chrome, Firefox, or Safari recommended).
+* No databases or extra libraries required.
 
 ---
 
-## 🪪 Licencia
-Este proyecto se publica bajo la licencia **MIT** (Open Source).
+## 📁 Project Structure
+
+If you are a developer or teacher, this is how the code is structured:
+
+* `index.html` → Main panel and scoreboard.
+* `historial.html` → Match record table logic.
+* `posiciones.html` → Visual explanation of tactics and zones.
+* `entrenamientos.html` → Multimedia library.
+* `style.css` → Modern Glassmorphism design.
+* `script.js` → Mathematical logic for scoring and saving to `LocalStorage`.
+
+---
+
+## 🪪 License
+This project is published under the **MIT** License (Open Source).
