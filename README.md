@@ -35,8 +35,7 @@ Unlike other applications, you don't need to download any `.exe` file. VoleyPro 
 
 ### 🌐 Live Demo
 If you don't want to download the code, you can try a fully functional live version of the app here:
-**[👉 Launch VoleyPro Live](https://tu-usuario.github.io/Proyecto2_Digitalizacion_AGN/)** *(Acuérdate de cambiar este enlace por el tuyo de GitHub Pages)*
-
+**[👉 Launch VoleyPro Live](marcadorvoleypro.netlify.app)** 
 ---
 
 ## ⚠️ VERY IMPORTANT – Data Storage
