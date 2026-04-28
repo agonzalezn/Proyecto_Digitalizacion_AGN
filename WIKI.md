@@ -20,3 +20,9 @@ The user interface implements a modern **Glassmorphism** design system.
 * Backgrounds use a dark CSS gradient.
 * UI cards use semi-transparent white backgrounds paired with a background blur filter.
 * This provides a high-contrast environment, ensuring the neon scoreboard colors remain perfectly visible to referees under harsh stadium lighting.
+
+## 📊 Data Export (CSV Integration)
+To bridge the gap between digital match tracking and physical federation administration, VoleyPro implements an automated CSV export system.
+* **How it works:** The `exportarCSV()` function reads the `voley_historial` JSON array from `LocalStorage`, parses it, and dynamically constructs a `.csv` string.
+* **Character Encoding:** A UTF-8 BOM (`\uFEFF`) is prepended to the blob before triggering the download. This ensures that spreadsheet applications like Microsoft Excel correctly interpret Spanish accents (e.g., in team names).
+* **Data Security:** Team names containing commas are strictly wrapped in double quotes `""` during generation to prevent the CSV columns from breaking.

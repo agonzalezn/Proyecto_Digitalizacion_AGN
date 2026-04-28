@@ -64,6 +64,7 @@ VoleyPro **does not use cloud servers**. It uses a browser technology called `Lo
 In the bottom menu, tap the scroll icon (📜):
 * See a visual summary of your victories and your Win Rate.
 * Access the full list of all saved matches.
+* **Export to CSV:** Download your entire match history as a `.csv` file to analyze in Excel, Google Sheets, or send to the federation.
 * You can clear the entire list using the delete button.
 
 ### 3️⃣ Tactics & Training

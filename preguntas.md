@@ -26,7 +26,7 @@ In Match Record Keeping, it transitions the process from a slow, error-prone man
 Currently, the digital scoreboard environment (AD) must bridge the gap with the traditional, non-digitized federation administration (Non-AD). This interaction currently relies on a manual bridge: staff must read the final digital history from the VoleyPro interface and manually transcribe these results into the official physical forms required by the non-digitized federation bodies.
 
 **What solutions or improvements would you propose to integrate these areas?**
-To achieve full integration, the proposed solution is to implement an automated CSV and PDF export feature. This would allow the digital match record to be compiled into the exact standardized format required by the federation and automatically emailed or uploaded to their portal via an API integration in the future, entirely eliminating the manual transcription step and establishing an unbroken digital chain of custody for match data.
+To address this, VoleyPro has successfully implemented an automated **CSV export feature**. This allows the digital match record to be instantly downloaded as a standardized spreadsheet file. This CSV file can then be directly emailed to the federation or imported into their administrative databases, effectively eliminating the manual transcription step and establishing an unbroken digital chain of custody for match data. Future improvements could expand this to direct API integrations.
 
 ### Criterion 6e) Present and Future Needs
 **What current needs of the company does your software solve?**

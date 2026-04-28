@@ -51,7 +51,7 @@
             </table>
             
             <div style="display: flex; gap: 10px; margin-top: 20px;">
-                <button onclick="alert('Funcionalidad de exportar a CSV próximamente')" class="btn-small" style="width: 100%; border-color: var(--local-color); color: var(--local-color);">
+                <button onclick="exportarCSV()" class="btn-small" style="width: 100%; border-color: var(--local-color); color: var(--local-color);">
                     📂 Exportar Datos
                 </button>
                 <button onclick="borrarHistorial()" class="btn-small" style="width: 100%; border-color: #ff4757; color: #ff4757;">
@@ -105,6 +105,46 @@
                 localStorage.removeItem('voley_historial');
                 location.reload();
             }
+        }
+
+        function exportarCSV() {
+            const historialData = JSON.parse(localStorage.getItem('voley_historial')) || [];
+            
+            if(historialData.length === 0) {
+                alert('No hay datos en el historial para exportar.');
+                return;
+            }
+
+            // Crear cabeceras
+            const cabeceras = ['Fecha', 'Equipo Local', 'Equipo Visitante', 'Sets Local', 'Sets Visitante'];
+            
+            // Construir filas asegurando que las cadenas con comas no rompan el CSV
+            const filas = historialData.map(p => [
+                p.fecha, 
+                `"${p.local}"`, 
+                `"${p.visitante}"`, 
+                p.setsL, 
+                p.setsV
+            ]);
+
+            // Unir todo en formato CSV
+            let csvContent = cabeceras.join(',') + '\n';
+            filas.forEach(fila => {
+                csvContent += fila.join(',') + '\n';
+            });
+
+            // Añadir BOM para que Excel lea correctamente los acentos (UTF-8)
+            const bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+            const blob = new Blob([bom, csvContent], { type: 'text/csv;charset=utf-8;' });
+            
+            // Crear enlace de descarga y disparar el click
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.setAttribute('download', 'historial_voley.csv');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
     </script>
 </body>
