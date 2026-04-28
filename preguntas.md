@@ -49,3 +49,24 @@ Data management follows a strict event-driven methodology. User interface intera
 
 **What do you do to guarantee the quality and consistency of the data?**
 Data quality and consistency are guaranteed through rigorous, programmatic input validation. The business logic strictly dictates that scores cannot drop below zero, preventing negative states. Transitioning between sets or resetting the match requires explicit user confirmation via prompt dialogs to prevent accidental data loss during high-stress moments of a game. Additionally, the data schema ensures that all points are timestamped and attributed to the correct team, maintaining a clear and auditable event log.
+
+### Criterion 6i) Integration of Data and Systems
+**How do the systems and data interact with each other, and what platforms support them?**
+VoleyPro's data model is intentionally designed to be lightweight and portable, utilizing the browser's native `LocalStorage` as its primary platform. This ensures zero latency and offline availability. The system interacts with external federation databases asynchronously through the newly implemented CSV Export feature. The user interface triggers the data serialization, generating a standardized `.csv` file with UTF-8 encoding (and a Byte Order Mark) to ensure full compatibility with common administrative platforms like Microsoft Excel, Google Sheets, or custom federation CRMs.
+
+**What proposals do you have to improve interoperability between systems?**
+To further improve interoperability, a future iteration should include a RESTful API integration. Instead of relying on manual CSV downloads and email attachments, the software could authenticate via OAuth and POST match results directly to the federation's server endpoints in real-time, completely automating the reporting pipeline.
+
+### Criterion 6j) Strategy-driven Documentation and Devlog
+**How are the changes documented and linked to the strategic objectives?**
+Every technical change is rigorously documented in the repository to ensure alignment with the club's digitalization strategy. The `WIKI.md` serves as the core technical documentation, explaining design decisions like the offline-first architecture and the CSV export logic. Commits follow the Conventional Commits standard (e.g., `feat:`, `docs:`, `fix:`) to provide a clear, auditable history of how the software evolves to meet business needs.
+
+**How is the devlog maintained and updated?**
+The project's evolution is tracked through a public Devlog published on professional networks like LinkedIn. This devlog acts not only as a technical diary of milestones achieved (such as UI design, storage implementation, and data export features) but also as a transparent communication tool for stakeholders, demonstrating continuous progress toward the club's operational modernization.
+
+### Criterion 6k) Human Resources Suitability
+**What specific skills are necessary to develop and maintain the software?**
+Maintaining and expanding VoleyPro requires a solid understanding of fundamental Web Technologies: HTML5 for semantic structure, CSS3 (specifically Flexbox, Grid, and modern UI styling techniques like Glassmorphism) for the interface, and Vanilla JavaScript (ES6+) for DOM manipulation and state management. Familiarity with Git version control and open-source contribution workflows is also absolutely essential.
+
+**What strategies would you propose for training future collaborators?**
+To ensure the project's long-term sustainability, I propose a two-pronged training strategy. First, leveraging the comprehensive `CONTRIBUTING.md` guide and the `WIKI.md` architecture overview to onboard new developers asynchronously. Second, establishing a "good first issue" labeling system on the repository to provide beginner-friendly tasks. This allows junior developers or club volunteers with basic coding knowledge to safely contribute, learn the codebase through practical experience, and gradually take on more complex features.
