@@ -101,4 +101,4 @@ This project is published under the **MIT** License (Open Source).
 
 ## 👨‍💻 Author
 **Aarón González**
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aarongonzaleznaranjo)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aar%C3%B3n-gonz%C3%A1lez-naranjo-660b62406/)
