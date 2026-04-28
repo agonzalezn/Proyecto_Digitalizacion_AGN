@@ -98,3 +98,7 @@ If you are a developer or teacher, this is how the code is structured:
 
 ## 🪪 License
 This project is published under the **MIT** License (Open Source).
+
+## 👨‍💻 Author
+**Aarón González**
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aarongonzaleznaranjo)
