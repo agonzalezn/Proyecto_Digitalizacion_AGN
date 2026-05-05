@@ -16,9 +16,12 @@
  * @type {Scoreboard}
  */
 let marcador = JSON.parse(localStorage.getItem('marcadorVoley')) || {
-    local: { puntos: 0, sets: 0 },
-    visitante: { puntos: 0, sets: 0 }
+    local: { puntos: 0, sets: 0, timeouts: 2 },
+    visitante: { puntos: 0, sets: 0, timeouts: 2 }
 };
+
+if (marcador.local.timeouts === undefined) marcador.local.timeouts = 2;
+if (marcador.visitante.timeouts === undefined) marcador.visitante.timeouts = 2;
 
 // Referencias al DOM
 const elPuntosLocal = document.getElementById('puntosLocal');
@@ -43,15 +46,39 @@ inputsNombres[1].addEventListener('input', (e) => localStorage.setItem('nombreVi
  * @returns {void}
  */
 function actualizarPantalla() {
-    // Formato 00
     elPuntosLocal.textContent = marcador.local.puntos < 10 ? '0' + marcador.local.puntos : marcador.local.puntos;
     elPuntosVisitante.textContent = marcador.visitante.puntos < 10 ? '0' + marcador.visitante.puntos : marcador.visitante.puntos;
     
     elSetsLocal.textContent = marcador.local.sets;
     elSetsVisitante.textContent = marcador.visitante.sets;
 
-    // Guardar estado actual
+    actualizarIndicadoresTimeouts('local');
+    actualizarIndicadoresTimeouts('visitante');
+
     localStorage.setItem('marcadorVoley', JSON.stringify(marcador));
+}
+
+function actualizarIndicadoresTimeouts(equipo) {
+    const container = document.getElementById('timeouts' + capitalize(equipo));
+    const btn = document.getElementById('btnTimeout' + capitalize(equipo));
+    const timeouts = marcador[equipo].timeouts;
+    const dots = container.querySelectorAll('.timeout-dot');
+    
+    dots.forEach((dot, index) => {
+        if (index < timeouts) {
+            dot.classList.add('active');
+            dot.classList.remove('used');
+        } else {
+            dot.classList.remove('active');
+            dot.classList.add('used');
+        }
+    });
+    
+    btn.disabled = timeouts === 0;
+}
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 /**
@@ -79,6 +106,21 @@ function restarPunto(equipo) {
 }
 
 /**
+ * Consume un tiempo muerto del equipo especificado.
+ * Cada equipo tiene derecho a 2 tiempos muertos por set.
+ * @function consumirTiempoMuerto
+ * @param {'local'|'visitante'} equipo - El identificador del equipo que solicita el tiempo muerto.
+ * @returns {void}
+ */
+function consumirTiempoMuerto(equipo) {
+    if (marcador[equipo].timeouts > 0) {
+        if(!confirm("¿Confirmar Tiempo Muerto para " + equipo.toUpperCase() + "?")) return;
+        marcador[equipo].timeouts--;
+        actualizarPantalla();
+    }
+}
+
+/**
  * Prompts for confirmation and, if accepted, increments the sets won by the specified team.
  * Automatically resets the points for both teams back to 0.
  * @function sumarSet
@@ -91,9 +133,12 @@ function sumarSet(equipo) {
     if (equipo === 'local') marcador.local.sets++;
     else marcador.visitante.sets++;
     
-    // Reset puntos al cambiar set
     marcador.local.puntos = 0;
     marcador.visitante.puntos = 0;
+    
+    marcador.local.timeouts = 2;
+    marcador.visitante.timeouts = 2;
+    
     actualizarPantalla();
 }
 
@@ -121,8 +166,8 @@ function reiniciarPartido() {
     // ---------------------------
 
     // Resetear variables
-    marcador.local.puntos = 0; marcador.local.sets = 0;
-    marcador.visitante.puntos = 0; marcador.visitante.sets = 0;
+    marcador.local.puntos = 0; marcador.local.sets = 0; marcador.local.timeouts = 2;
+    marcador.visitante.puntos = 0; marcador.visitante.sets = 0; marcador.visitante.timeouts = 2;
     
     inputsNombres[0].value = "LOCAL";
     inputsNombres[1].value = "VISITA";

@@ -32,6 +32,14 @@
                 <div class="sets-badge">Sets: <span id="setsLocal">0</span></div>
 
                 <button class="btn-giant push-effect" onclick="sumarPunto('local')">+</button>
+                <div class="timeouts-container">
+                    <span class="timeout-label">⏱️ Tiempos</span>
+                    <div class="timeout-indicators" id="timeoutsLocal">
+                        <span class="timeout-dot active"></span>
+                        <span class="timeout-dot active"></span>
+                    </div>
+                    <button class="btn-timeout" id="btnTimeoutLocal" onclick="consumirTiempoMuerto('local')">T</button>
+                </div>
                 <div class="secondary-actions">
                     <button class="btn-small" onclick="restarPunto('local')">-1</button>
                     <button class="btn-small btn-set" onclick="sumarSet('local')">SET 🏆</button>
@@ -46,6 +54,14 @@
                 <div class="sets-badge">Sets: <span id="setsVisitante">0</span></div>
 
                 <button class="btn-giant push-effect" onclick="sumarPunto('visitante')">+</button>
+                <div class="timeouts-container">
+                    <span class="timeout-label">⏱️ Tiempos</span>
+                    <div class="timeout-indicators" id="timeoutsVisitante">
+                        <span class="timeout-dot active"></span>
+                        <span class="timeout-dot active"></span>
+                    </div>
+                    <button class="btn-timeout" id="btnTimeoutVisitante" onclick="consumirTiempoMuerto('visitante')">T</button>
+                </div>
                 <div class="secondary-actions">
                     <button class="btn-small" onclick="restarPunto('visitante')">-1</button>
                     <button class="btn-small btn-set" onclick="sumarSet('visitante')">SET 🏆</button>
